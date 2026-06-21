@@ -1,0 +1,272 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: contain;
+}
+
+/* Dark mode base */
+html { transition: background-color 0.3s ease, color 0.3s ease; }
+
+/* Dark mode overrides for common elements */
+.dark body { background-color: #020617; color: #e2e8f0; }
+.dark .bg-slate-50 { background-color: #020617; }
+.dark .bg-white { background-color: #0f172a; }
+.dark .bg-slate-100 { background-color: #1e293b; }
+.dark .bg-slate-200 { background-color: #334155; }
+
+.dark .text-slate-900 { color: #f1f5f9; }
+.dark .text-slate-800 { color: #e2e8f0; }
+.dark .text-slate-700 { color: #cbd5e1; }
+.dark .text-slate-600 { color: #94a3b8; }
+.dark .text-slate-500 { color: #64748b; }
+
+.dark .border-slate-200 { border-color: #1e293b; }
+.dark .border-slate-100 { border-color: #1e293b; }
+.dark .border-slate-300 { border-color: #334155; }
+
+.dark .shadow-sm { box-shadow: 0 1px 3px 0 rgba(0,0,0,0.4); }
+.dark .shadow-md { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.4); }
+.dark .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.4); }
+.dark .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0,0,0,0.4); }
+
+.dark .bg-red-50 { background-color: #1c1017; }
+.dark .bg-red-100 { background-color: #2d1520; }
+.dark .bg-blue-50 { background-color: #0c1929; }
+.dark .bg-blue-100 { background-color: #132540; }
+.dark .bg-emerald-50 { background-color: #071a14; }
+.dark .bg-emerald-100 { background-color: #0d2b1f; }
+.dark .bg-purple-50 { background-color: #14091f; }
+.dark .bg-purple-100 { background-color: #1e0f33; }
+.dark .bg-amber-50 { background-color: #1a1508; }
+.dark .bg-amber-100 { background-color: #2d2410; }
+
+.dark .hover\:bg-slate-50:hover { background-color: #1e293b; }
+.dark .hover\:bg-white:hover { background-color: #1e293b; }
+.dark .hover\:bg-slate-200:hover { background-color: #334155; }
+
+.dark .bg-gradient-to-br.from-red-50 { --tw-gradient-from: #1c1017; }
+.dark .bg-gradient-to-br.from-blue-50 { --tw-gradient-from: #0c1929; }
+.dark .bg-gradient-to-br.from-emerald-50 { --tw-gradient-from: #071a14; }
+.dark .bg-gradient-to-br.from-purple-50 { --tw-gradient-from: #14091f; }
+.dark .bg-gradient-to-br.from-slate-50 { --tw-gradient-from: #0f172a; }
+
+.dark .placeholder-slate-400::placeholder { color: #475569; }
+
+.dark input, .dark textarea, .dark select {
+  background-color: #1e293b;
+  color: #e2e8f0;
+  border-color: #334155;
+}
+.dark input:focus, .dark textarea:focus, .dark select:focus {
+  border-color: #007A33;
+}
+
+.dark .bg-slate-900 { background-color: #020617; }
+.dark .border-slate-800 { border-color: #0f172a; }
+
+/* Preserve footer dark */
+.dark footer.bg-slate-900 { background-color: #020617; }
+
+/* Domain card dark gradients */
+.dark .from-red-50.to-red-100\/50 { background: linear-gradient(to bottom right, #1c1017, #1c101780); }
+.dark .from-blue-50.to-blue-100\/50 { background: linear-gradient(to bottom right, #0c1929, #0c192980); }
+.dark .from-emerald-50.to-emerald-100\/50 { background: linear-gradient(to bottom right, #071a14, #071a1480); }
+.dark .from-purple-50.to-purple-100\/50 { background: linear-gradient(to bottom right, #14091f, #14091f80); }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #64748b; }
+::selection { background-color: #007A33; color: white; }
+
+/* ============================
+   SPLASH SCREEN ANIMATIONS
+   ============================ */
+@keyframes splash-bg-sweep {
+  0% { clip-path: circle(0% at 50% 50%); }
+  100% { clip-path: circle(150% at 50% 50%); }
+}
+@keyframes splash-logo-scale {
+  0% { transform: scale(0) rotate(-180deg); opacity: 0; }
+  60% { transform: scale(1.2) rotate(10deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+@keyframes splash-logo-pulse {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.08); filter: brightness(1.2); }
+}
+@keyframes splash-text-reveal {
+  0% { opacity: 0; transform: translateY(30px); letter-spacing: 0.5em; }
+  100% { opacity: 1; transform: translateY(0); letter-spacing: 0.05em; }
+}
+@keyframes splash-subtitle-reveal {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 0.7; transform: translateY(0); }
+}
+@keyframes splash-flag-stripe {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+@keyframes splash-dots {
+  0%, 80%, 100% { transform: scale(0); opacity: 0.5; }
+  40% { transform: scale(1); opacity: 1; }
+}
+@keyframes splash-ring {
+  0% { transform: scale(0.5); opacity: 0.8; border-width: 4px; }
+  100% { transform: scale(2.5); opacity: 0; border-width: 0px; }
+}
+@keyframes splash-particles {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-80px) scale(0); opacity: 0; }
+}
+@keyframes splash-exit {
+  0% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.1); }
+}
+@keyframes splash-progress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.splash-bg { animation: splash-bg-sweep 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+.splash-logo { animation: splash-logo-scale 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both; }
+.splash-logo-pulse { animation: splash-logo-pulse 2s ease-in-out 1.2s infinite; }
+.splash-text { animation: splash-text-reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.8s both; }
+.splash-subtitle { animation: splash-subtitle-reveal 0.6s ease-out 1.2s both; }
+.splash-flag-1 { animation: splash-flag-stripe 0.5s ease-out 1.4s both; transform-origin: left; }
+.splash-flag-2 { animation: splash-flag-stripe 0.5s ease-out 1.55s both; transform-origin: left; }
+.splash-flag-3 { animation: splash-flag-stripe 0.5s ease-out 1.7s both; transform-origin: left; }
+.splash-exit { animation: splash-exit 0.6s cubic-bezier(0.4, 0, 1, 1) forwards; }
+.splash-progress { animation: splash-progress 2.8s ease-in-out forwards; }
+.splash-ring { animation: splash-ring 2s ease-out 0.6s infinite; }
+.splash-dot-1 { animation: splash-dots 1.4s ease-in-out 0.6s infinite; }
+.splash-dot-2 { animation: splash-dots 1.4s ease-in-out 0.8s infinite; }
+.splash-dot-3 { animation: splash-dots 1.4s ease-in-out 1.0s infinite; }
+
+/* ============================
+   PAGE TRANSITION ANIMATIONS
+   ============================ */
+@keyframes page-enter {
+  0% { opacity: 0; transform: translateY(30px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes page-fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.page-enter { animation: page-enter 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.page-fade { animation: page-fade-in 0.4s ease-out both; }
+
+/* ============================
+   STAGGER CHILDREN ANIMATIONS
+   ============================ */
+@keyframes stagger-up {
+  0% { opacity: 0; transform: translateY(40px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes stagger-left {
+  0% { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes stagger-right {
+  0% { opacity: 0; transform: translateX(30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes stagger-scale {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.anim-stagger-up { animation: stagger-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.anim-stagger-left { animation: stagger-left 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.anim-stagger-right { animation: stagger-right 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.anim-stagger-scale { animation: stagger-scale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+
+/* Animation delays are applied via inline style={{ animationDelay }} for reliability */
+
+/* ============================
+   CARD HOVER & INTERACTION
+   ============================ */
+@keyframes card-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.97); }
+  100% { transform: scale(1); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0,122,51,0.3); }
+  50% { box-shadow: 0 0 20px 5px rgba(0,122,51,0.15); }
+}
+
+.card-hover {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+}
+.card-hover:active {
+  animation: card-pop 0.3s ease;
+}
+.float-anim { animation: float 3s ease-in-out infinite; }
+.shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+.glow-pulse { animation: glow-pulse 2s ease-in-out infinite; }
+
+/* ============================
+   SLIDE & BOUNCE
+   ============================ */
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounce-in {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.15); }
+  70% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slide-up { animation: slide-up 0.3s ease-out; }
+.animate-bounce-in { animation: bounce-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+.animate-spin-slow { animation: spin-slow 20s linear infinite; }
+.animate-count { animation: count-up 0.5s ease-out both; }
+
+/* nav-enter removed — wrapping the header with a transform-based animation
+   creates a new stacking context that traps z-index, breaking mobile dropdown */
+
+/* ============================
+   MOBILE SAFE AREAS
+   ============================ */
+.safe-area-bottom { padding-bottom: env(safe-area-inset-bottom, 0); }
+
+@media (max-width: 768px) {
+  ::-webkit-scrollbar { display: none; }
+  body { -ms-overflow-style: none; scrollbar-width: none; }
+}

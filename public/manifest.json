@@ -1,0 +1,46 @@
+{
+  "name": "Juridique Malagasy",
+  "short_name": "Juridique MG",
+  "description": "Votre guide juridique complet de Madagascar — Code Pénal, Droit du Travail, Droit Foncier, Droit de la Famille",
+  "start_url": "/",
+  "id": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "categories": ["education", "reference", "books"],
+  "lang": "fr",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Code Pénal",
+      "short_name": "Pénal",
+      "description": "Rechercher dans le Code Pénal",
+      "url": "/?domain=penal",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Droit du Travail",
+      "short_name": "Travail",
+      "description": "Rechercher dans le Droit du Travail",
+      "url": "/?domain=labor",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}
