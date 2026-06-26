@@ -49,7 +49,7 @@ export default function Chatbot({ lang, user, onRequestLogin }: ChatbotProps) {
   useEffect(() => { setMessages([]); }, [user?.email]);
 
   // ===== GEMINI AI =====
-  const GEMINI_KEY = 'AIzaSyDYgco5yz0fLdtkVz1bRGWxWM8TPfBJKqM';
+  const 
 
   const callGemini = async (userQuestion: string): Promise<string | null> => {
     const systemPrompt = lang === 'fr'
