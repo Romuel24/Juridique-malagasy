@@ -18,7 +18,7 @@ import {
 } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAJy0BzEm1xNhDGtn6eUMLDFY7fRAb8VsU",
+  apiKey: 
   authDomain: "juridique-malagasy.firebaseapp.com",
   projectId: "juridique-malagasy",
   storageBucket: "juridique-malagasy.firebasestorage.app",
